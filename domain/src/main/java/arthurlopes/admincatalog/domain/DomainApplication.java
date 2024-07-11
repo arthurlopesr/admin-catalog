@@ -1,13 +1,13 @@
-package arthurlopes.admincatalog.admincatalog;
+package arthurlopes.admincatalog.domain;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AdminCatalogApplication {
+public class DomainApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AdminCatalogApplication.class, args);
+        SpringApplication.run(DomainApplication.class, args);
     }
 
 }

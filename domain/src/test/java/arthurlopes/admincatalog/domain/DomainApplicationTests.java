@@ -1,10 +1,10 @@
-package arthurlopes.admincatalog.admincatalog;
+package arthurlopes.admincatalog.domain;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AdminCatalogApplicationTests {
+class DomainApplicationTests {
 
     @Test
     void contextLoads() {
