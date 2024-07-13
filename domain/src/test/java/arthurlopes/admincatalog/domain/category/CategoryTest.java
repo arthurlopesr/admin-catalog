@@ -16,7 +16,7 @@ public class CategoryTest {
         final var createdCategory = Category.newCategory(expectedName, expectedDescription, expectedIsActive);
 
         Assertions.assertNotNull(createdCategory);
-        Assertions.assertNotNull(createdCategory.getCategoryId());
+        Assertions.assertNotNull(createdCategory.getId());
         Assertions.assertEquals(expectedName, createdCategory.getName());
         Assertions.assertEquals(expectedDescription, createdCategory.getDescription());
         Assertions.assertEquals(expectedIsActive, createdCategory.isActive());

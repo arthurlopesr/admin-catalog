@@ -1,11 +1,12 @@
 package arthurlopes.admincatalog.domain.category;
 
-import java.time.Instant;
-import java.util.UUID;
+import arthurlopes.admincatalog.domain.AggregateRoot;
 
-public class Category {
+import java.time.Instant;
+
+public class Category extends AggregateRoot<CategoryId> {
     private Category(
-            final String categoryId,
+            final CategoryId anId,
             final String name,
             final String description,
             final boolean active,
@@ -13,7 +14,7 @@ public class Category {
             final Instant updatedAt,
             final Instant deletedAt
     ) {
-        this.categoryId = categoryId;
+        super(anId);
         this.name = name;
         this.description = description;
         this.active = active;
@@ -21,8 +22,6 @@ public class Category {
         this.updatedAt = updatedAt;
         this.deletedAt = deletedAt;
     }
-
-    private String categoryId;
 
     private String name;
 
@@ -37,13 +36,13 @@ public class Category {
     private Instant deletedAt;
 
     public static Category newCategory(final String aName, final String aDescription, final boolean aIsActive) {
-        final var id = UUID.randomUUID().toString();
+        final var id = CategoryId.unique();
         final var now = Instant.now();
         return new Category(id, aName, aDescription, aIsActive, now, now, null);
     }
 
-    public String getCategoryId() {
-        return categoryId;
+    public CategoryId getId() {
+        return id;
     }
 
     public String getName() {
